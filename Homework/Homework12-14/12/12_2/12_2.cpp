@@ -5,15 +5,16 @@
 #include <cstdlib>
 #include <cstdio>
 #include <cstring>
+#include <unistd.h> // for write, close
 
 int main() 
 {
     // 创建临时文件
-    char tempFileName[] = "/tmp/tempfileXXXXXX";
+    char tempFileName[] = "testXXXXXX";
     int fd = mkstemp(tempFileName);
     if (fd == -1) 
     {
-        std::cerr << "无法创建临时文件！" << std::endl;
+        perror("mkstemp 失败");
         return 1;
     }
 
@@ -24,14 +25,26 @@ int main()
     ssize_t bytesWritten = write(fd, data, strlen(data));
     if (bytesWritten == -1) 
     {
-        std::cerr << "写入临时文件失败！" << std::endl;
+        perror("write 失败");
+        close(fd);
+        std::remove(tempFileName);
+        return 1;
+    }
+    else if (bytesWritten != (ssize_t)strlen(data)) 
+    {
+        std::cerr << "写入数据不完整！" << std::endl;
         close(fd);
         std::remove(tempFileName);
         return 1;
     }
 
     // 关闭文件描述符以便重新打开进行读取
-    close(fd);
+    if (close(fd) == -1) 
+    {
+        perror("close 失败");
+        std::remove(tempFileName);
+        return 1;
+    }
 
     // 读取数据
     std::ifstream inputFile(tempFileName);
@@ -57,7 +70,7 @@ int main()
 
     // 删除临时文件
     if (std::remove(tempFileName) != 0) {
-        std::cerr << "无法删除临时文件！" << std::endl;
+        perror("删除临时文件失败");
         return 1;
     }
 
