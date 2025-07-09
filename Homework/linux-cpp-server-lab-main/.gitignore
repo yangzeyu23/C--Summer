@@ -1,0 +1,12 @@
+server
+*.o
+*.so
+
+*~
+.*.swp
+.*.swo
+
+.vscode/
+.idea/
+
+.DS_Store

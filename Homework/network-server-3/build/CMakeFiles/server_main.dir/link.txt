@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/server_main.dir/src/main.cpp.o CMakeFiles/server_main.dir/src/modules/time.cpp.o CMakeFiles/server_main.dir/src/modules/issue.cpp.o CMakeFiles/server_main.dir/src/modules/diskfree.cpp.o CMakeFiles/server_main.dir/src/modules/process.cpp.o -o server_main  libcommon.a libmodule.a libserver.a 

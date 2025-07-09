@@ -1,0 +1,10 @@
+/home/epiphany/C++/Homework/network-server-2/build/CMakeFiles/common.dir
+/home/epiphany/C++/Homework/network-server-2/build/CMakeFiles/module.dir
+/home/epiphany/C++/Homework/network-server-2/build/CMakeFiles/server.dir
+/home/epiphany/C++/Homework/network-server-2/build/CMakeFiles/diskfree.dir
+/home/epiphany/C++/Homework/network-server-2/build/CMakeFiles/issue.dir
+/home/epiphany/C++/Homework/network-server-2/build/CMakeFiles/process.dir
+/home/epiphany/C++/Homework/network-server-2/build/CMakeFiles/time.dir
+/home/epiphany/C++/Homework/network-server-2/build/CMakeFiles/server_main.dir
+/home/epiphany/C++/Homework/network-server-2/build/CMakeFiles/edit_cache.dir
+/home/epiphany/C++/Homework/network-server-2/build/CMakeFiles/rebuild_cache.dir

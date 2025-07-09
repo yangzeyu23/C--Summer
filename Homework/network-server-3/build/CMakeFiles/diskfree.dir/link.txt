@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -shared -Wl,-soname,libdiskfree.so -o libdiskfree.so CMakeFiles/diskfree.dir/src/modules/diskfree.cpp.o 
